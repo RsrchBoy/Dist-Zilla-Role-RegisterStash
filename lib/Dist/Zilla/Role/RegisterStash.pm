@@ -7,7 +7,7 @@ use namespace::autoclean;
 
 with 'Dist::Zilla::Role::Plugin';
 
-=method _register_stash($name => $stash)
+=method _register_stash($name => $stash_instance)
 
 Given a name and a stash instance, register it with our zilla object.
 
@@ -63,6 +63,8 @@ Sometimes it's handy for a plugin to register a stash, and there's no easy way
 to do that (without touching $self->zilla->_local_stashes or somesuch).
 
 This role provides a _register_stash() method to your plugin, allowing you to
-register stashes.
+register stashes.  Yes, the leading underscore is intentional: the purpose of
+this method is to allow the consuming plugin to register stashes, not anyone
+else, so this method is private to the consumer.
 
 =cut
