@@ -5,7 +5,7 @@ package Dist::Zilla::Role::RegisterStash;
 use Moose::Role;
 use namespace::autoclean;
 
-with 'Dist::Zilla::Role::Plugin';
+use Dist::Zilla 4.3 ();
 
 =method _register_stash($name => $stash_instance)
 
