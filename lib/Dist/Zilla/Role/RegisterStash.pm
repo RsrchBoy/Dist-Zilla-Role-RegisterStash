@@ -47,7 +47,7 @@ before register_component => sub {
 !!42;
 __END__
 
-=for :stopwords zilla
+=for :stopwords zilla somesuch
 
 =head1 SYNOPSIS
 
