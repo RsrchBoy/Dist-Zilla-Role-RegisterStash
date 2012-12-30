@@ -10,7 +10,7 @@ Dist::Zilla::Role::RegisterStash - A plugin that can register stashes
 
 =head1 VERSION
 
-This document describes version 0.001 of Dist::Zilla::Role::RegisterStash - released November 21, 2012 as part of Dist-Zilla-Role-RegisterStash.
+This document describes version 0.002 of Dist::Zilla::Role::RegisterStash - released December 30, 2012 as part of Dist-Zilla-Role-RegisterStash.
 
 =head1 SYNOPSIS
 
@@ -35,20 +35,6 @@ else, so this method is private to the consumer.
 =head2 _register_stash($name => $stash_instance)
 
 Given a name and a stash instance, register it with our zilla object.
-
-=head1 SOURCE
-
-The development version is on github at L<http://github.com/RsrchBoy/Dist-Zilla-Role-RegisterStash>
-and may be cloned from L<git://github.com/RsrchBoy/Dist-Zilla-Role-RegisterStash.git>
-
-=head1 BUGS
-
-Please report any bugs or feature requests on the bugtracker website
-https://github.com/RsrchBoy/Dist-Zilla-Role-RegisterStash/issues
-
-When submitting a bug or request, please include a test-file or a
-patch to an existing test-file that illustrates the bug or desired
-feature.
 
 =head1 AUTHOR
 
