@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use autobox::Core;
+use autobox::Core 1.24;
 
 use Test::More;
 use File::Temp 'tempdir';
