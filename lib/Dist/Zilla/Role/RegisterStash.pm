@@ -4,6 +4,7 @@ package Dist::Zilla::Role::RegisterStash;
 
 use Moose::Role;
 use namespace::autoclean;
+use Class::Load;
 
 use Dist::Zilla 4.3 ();
 
@@ -43,6 +44,31 @@ before register_component => sub {
 
     return;
 };
+
+=method _register_or_retrieve_stash
+
+Given a stash name (e.g. C<%Store::Git>), return that stash.  If our C<dzil>
+claims to not be aware of any such stash we register a new instance of the
+stash in question and return it.
+
+=cut
+
+sub _register_or_retrieve_stash {
+    my ($self, $name) = @_;
+
+    my $stash = $self->zilla->stash_named($name);
+    return $stash
+        if $stash;
+
+    # TODO isn't there a better way?!
+    (my $stash_pkg = $name) =~ s/^%/Dist::Zilla::Stash::/;
+
+    ### $stash_pkg;
+    Class::Load::load_class($stash_pkg);
+    $stash = $stash_pkg->new();
+    $self->_register_stash($name => $stash);
+    return $stash;
+}
 
 !!42;
 __END__
