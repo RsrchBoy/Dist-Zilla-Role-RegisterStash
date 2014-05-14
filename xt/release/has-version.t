@@ -1,3 +1,4 @@
+#!perl
 #
 # This file is part of Dist-Zilla-Role-RegisterStash
 #
@@ -7,13 +8,10 @@
 #
 #   The GNU Lesser General Public License, Version 2.1, February 1999
 #
-package Dist::Zilla::Stash::TestStash;
 
-use Moose;
-use namespace::autoclean;
+use Test::More;
 
-with 'Dist::Zilla::Role::Stash';
-
-__PACKAGE__->meta->make_immutable;
-!!42;
-__END__
+eval "use Test::HasVersion";
+plan skip_all => "Test::HasVersion required for testing version numbers"
+  if $@;
+all_pm_version_ok();

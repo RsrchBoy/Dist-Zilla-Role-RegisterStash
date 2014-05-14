@@ -1,7 +1,5 @@
 Revision history for Dist-Zilla-Role-RegisterStash
 
-{{$NEXT}}
-
 0.003     2014-05-14 01:57:34 PDT-0700
 	* add _register_or_retrieve_stash()
 
